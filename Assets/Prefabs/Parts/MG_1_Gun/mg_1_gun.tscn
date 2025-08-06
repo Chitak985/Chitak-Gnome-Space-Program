@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp0g31ieghpyl"]
+
+[ext_resource type="Script" uid="uid://btpp6j4bi7rfx" path="res://Scripts/PartDefinition.cs" id="1_txqph"]
+[ext_resource type="Texture2D" uid="uid://dvbk213jjdcvf" path="res://Assets/Textures/category_fuel.png" id="2_wv7h4"]
+[ext_resource type="Material" uid="uid://dokglcqkxact" path="res://Assets/Prefabs/Parts/MG_1_FuelTank/Material.tres" id="3_agpus"]
+[ext_resource type="ArrayMesh" uid="uid://bkhvvjotquawc" path="res://Assets/Prefabs/Parts/MG_1_FuelTank/MG_1_FuelTank.obj" id="4_a2jp5"]
+[ext_resource type="Script" uid="uid://bju7ped2nl5sy" path="res://Scripts/CraftAssembly/AttachNode.cs" id="5_yipl2"]
+[ext_resource type="PackedScene" uid="uid://2u1df81enha5" path="res://Assets/Prefabs/PartModules/Gravity.tscn" id="6_fpetp"]
+[ext_resource type="PackedScene" uid="uid://t7mlkppo00uv" path="res://Assets/Prefabs/PartModules/GunInline.tscn" id="7_wv7h4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3iijt"]
+height = 3.00586
+radius = 1.02588
+
+[node name="MG_1_Gun" type="RigidBody3D"]
+mass = 200.0
+gravity_scale = 0.0
+script = ExtResource("1_txqph")
+cameraRot = Vector3(-24.5, 90, 0)
+cameraPos = Vector3(2, 0.9, 0)
+cameraSize = 3.75
+categoryName = "Gun"
+categoryIcon = ExtResource("2_wv7h4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.282, 0, 0, 0, 0.693489, 0, 0, 0, 0.282, 0, -0.385995, 0)
+layers = 3
+material_override = ExtResource("3_agpus")
+mesh = ExtResource("4_a2jp5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.142, 0, 0, 0, 0.349, 0, 0, 0, 0.142, 0, 0.901369, 0)
+layers = 3
+material_override = ExtResource("3_agpus")
+mesh = ExtResource("4_a2jp5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.277, 0, 0, 0, 0.949396, 0, 0, 0, 0.277, 0, 0, 0)
+shape = SubResource("CylinderShape3D_3iijt")
+
+[node name="AttachmentNode2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.375, 0)
+script = ExtResource("5_yipl2")
+
+[node name="Gravity" parent="." instance=ExtResource("6_fpetp")]
+
+[node name="GunInline" parent="." instance=ExtResource("7_wv7h4")]
+
+[connection signal="input_event" from="." to="." method="OnInputEvent"]

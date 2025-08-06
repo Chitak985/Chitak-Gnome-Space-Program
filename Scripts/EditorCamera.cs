@@ -40,9 +40,9 @@ public partial class EditorCamera : Camera3D
 		Position = Position.Lerp(outTarget, lerpy);
 	}
 
-    public override void _Input(InputEvent @event)
-    {
-        if (@event is InputEventMouseButton buttonEvent)
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton buttonEvent)
 		{
 			switch (buttonEvent.ButtonIndex)
 			{
@@ -71,5 +71,5 @@ public partial class EditorCamera : Camera3D
 					break;
 			}
 		}
-    }
+	}
 }

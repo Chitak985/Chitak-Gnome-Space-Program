@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://t7mlkppo00uv"]
+
+[ext_resource type="Script" uid="uid://c5t00vq3cd5ur" path="res://Scripts/PartModules/GunInline.cs" id="1_ljmwp"]
+[ext_resource type="PackedScene" uid="uid://bny6jsxf25dke" path="res://Assets/Prefabs/bullett.tscn" id="2_mt75i"]
+
+[node name="GunInline" type="Node3D"]
+script = ExtResource("1_ljmwp")
+bulletPrefab = ExtResource("2_mt75i")

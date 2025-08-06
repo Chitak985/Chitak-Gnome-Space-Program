@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bny6jsxf25dke"]
+
+[ext_resource type="PackedScene" uid="uid://2u1df81enha5" path="res://Assets/Prefabs/PartModules/Gravity.tscn" id="1_22y8t"]
+[ext_resource type="Script" uid="uid://b5aa45dry7coo" path="res://Assets/Prefabs/Bullett.cs" id="1_sbb60"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h6347"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_22y8t"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_sbb60")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_h6347")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_22y8t")
+
+[node name="Gravity" parent="." instance=ExtResource("1_22y8t")]

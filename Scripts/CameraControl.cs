@@ -73,8 +73,8 @@ public partial class CameraControl : Camera3D
 	}
 
 	// What the fuck is this shit??
-    public override void _UnhandledInput(InputEvent @event)
-    {
+	public override void _UnhandledInput(InputEvent @event)
+	{
 		if (@event is InputEventMouseButton buttonEvent && buttonEvent.Pressed)
 		{
 			if (Input.IsMouseButtonPressed(MouseButton.Right))
@@ -111,5 +111,5 @@ public partial class CameraControl : Camera3D
 		{
 			movementSpeed /= 1.1f;
 		}
-    }
+	}
 }

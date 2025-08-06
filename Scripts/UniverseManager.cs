@@ -3,7 +3,7 @@ using Godot.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-// TODO: make a "sphere of influence" system to keep the influencing planet at 0,0,0 (floating point imprecision bullshit)
+// TODO: make a "sphre of influence" system to keep the influencing planet at 0,0,0 (floating point imprecision bullshit)
 // Somehow invert the position of every body so that the actual planet of influence remains stationary??? HOW TF DO I DO THAT?
 
 public partial class UniverseManager : Node
@@ -48,18 +48,18 @@ public partial class UniverseManager : Node
 		}
 	}
 
-    public override void _Process(double delta)
-    {
+	public override void _Process(double delta)
+	{
 		if (running)
 		{
 			UpdateScaled();
 			cameraPivot?.LookAt(currentPlanet.GlobalPosition, Vector3.Up);
 			cameraPivot?.Rotate(Vector3.Right, Mathf.DegToRad(90));
 		}
-    }
+	}
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
@@ -77,12 +77,12 @@ public partial class UniverseManager : Node
 
 			if (playerMagnitude > maxDistanceFromOrigin)
 			{
-                if(playerAffectedByOrigin)player.GlobalPosition -= playerPosition;
-                //GlobalPosition -= playerPosition;
+				if(playerAffectedByOrigin)player.GlobalPosition -= playerPosition;
+				//GlobalPosition -= playerPosition;
 
-                // there is a chance for everything to fall apart over time but that ok
-                OffsetChildren(localSpace, playerPosition);
-               // OffsetChildren(scaledSpace, playerPosition);
+				// there is a chance for everything to fall apart over time but that ok
+				OffsetChildren(localSpace, playerPosition);
+			   // OffsetChildren(scaledSpace, playerPosition);
 			   	scaledSpace.GlobalPosition -= playerPosition;
 	
 			

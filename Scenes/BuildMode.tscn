@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dyv83fiusn5pb"]
+[gd_scene load_steps=23 format=3 uid="uid://dyv83fiusn5pb"]
 
 [ext_resource type="PackedScene" uid="uid://trw28dpmj3t6" path="res://Assets/Meshes/VAB_Interior/VAB_Interior.blend" id="1_th7se"]
 [ext_resource type="ArrayMesh" uid="uid://bmvfs84rflyx6" path="res://Assets/Meshes/VAB_Stand.obj" id="2_pofsq"]
@@ -11,10 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bbui2a1g5tf6j" path="res://Assets/Prefabs/UI/part_selector.tscn" id="9_0e7k0"]
 [ext_resource type="PackedScene" uid="uid://f72it1x2go4q" path="res://Assets/Prefabs/UI/part_category.tscn" id="10_g73v6"]
 [ext_resource type="PackedScene" uid="uid://ljsvwdkcmhft" path="res://Assets/Prefabs/Parts/MG_1_FuelTank/mg_1_fueltank.tscn" id="11_avdd4"]
-[ext_resource type="PackedScene" uid="uid://drmdivxomqm0s" path="res://Assets/Prefabs/Parts/GBRP_1_Engine/gbrp_1_engine.tscn" id="12_0e7k0"]
+[ext_resource type="PackedScene" uid="uid://ddged2dggii6q" path="res://Assets/Prefabs/Parts/GBRP_1_Engine/gbrp_1_engine.tscn" id="12_0e7k0"]
 [ext_resource type="Script" uid="uid://c4p5wqtqh1cpr" path="res://Scripts/SceneSwitcher.cs" id="13_7yytv"]
+[ext_resource type="PackedScene" uid="uid://b7jtlnmudil86" path="res://Assets/Prefabs/Parts/GBRP_2_Engine/gbrp_2_engine.tscn" id="13_mmpr6"]
 [ext_resource type="Script" uid="uid://b4vkjl6q7rcvf" path="res://Scripts/CraftAssembly/LaunchCraft.cs" id="13_vhgu6"]
 [ext_resource type="Script" uid="uid://c5cx8q1qmmjts" path="res://Scripts/CraftAssembly/CraftAssembler.cs" id="14_8srs3"]
+[ext_resource type="PackedScene" uid="uid://cp0g31ieghpyl" path="res://Assets/Prefabs/Parts/MG_1_Gun/mg_1_gun.tscn" id="14_e3mp1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_otfmg"]
 energy_multiplier = 2.0
@@ -136,7 +138,7 @@ categoryButton = ExtResource("10_g73v6")
 categoryContainer = NodePath("CatContainer/ScrollContainer/VBoxContainer")
 partListContainer = NodePath("PartContainer/PartList/PanelContainer")
 craftContainer = NodePath("../../CurrentCraft")
-partList = Array[PackedScene]([ExtResource("6_0j17l"), ExtResource("11_avdd4"), ExtResource("12_0e7k0")])
+partList = Array[PackedScene]([ExtResource("6_0j17l"), ExtResource("11_avdd4"), ExtResource("12_0e7k0"), ExtResource("13_mmpr6"), ExtResource("14_e3mp1")])
 
 [node name="PartContainer" type="Panel" parent="UI/PartPicker"]
 layout_mode = 1

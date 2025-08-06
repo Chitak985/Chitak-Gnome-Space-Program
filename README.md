@@ -1,5 +1,9 @@
 # Gnome Space Program
 
+Added from the original:
+- Warp Drive 1
+- Inline Gun
+
 Feel free to fork the game and edit whatever you want. You can also start a pull request if you want your changes to be added to the main game.
 
 Some things to note:

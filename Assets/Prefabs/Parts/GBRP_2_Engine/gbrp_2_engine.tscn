@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=3 uid="uid://b7jtlnmudil86"]
+
+[ext_resource type="Script" uid="uid://btpp6j4bi7rfx" path="res://Scripts/PartDefinition.cs" id="1_y7nil"]
+[ext_resource type="Texture2D" uid="uid://cme6pqqht1o5u" path="res://Assets/Textures/category_engines.png" id="2_ilwn7"]
+[ext_resource type="Texture2D" uid="uid://ci5ruh18atty1" path="res://Assets/Prefabs/Parts/GBRP_2_Engine/Color.png" id="3_j8kdr"]
+[ext_resource type="Texture2D" uid="uid://dqa43c2uqx1nu" path="res://Assets/Prefabs/Parts/GBRP_2_Engine/Normal.png" id="4_6i24p"]
+[ext_resource type="ArrayMesh" uid="uid://1jqxbxa3dkjc" path="res://Assets/Prefabs/Parts/GBRP_2_Engine/GBRP_2_Engine.obj" id="5_ss134"]
+[ext_resource type="Script" uid="uid://bju7ped2nl5sy" path="res://Scripts/CraftAssembly/AttachNode.cs" id="6_ftaxd"]
+[ext_resource type="PackedScene" uid="uid://2u1df81enha5" path="res://Assets/Prefabs/PartModules/Gravity.tscn" id="7_45kgd"]
+[ext_resource type="PackedScene" uid="uid://e48at2cr02s6" path="res://Assets/Prefabs/PartModules/Engine.tscn" id="8_g8gfi"]
+[ext_resource type="Script" uid="uid://dncfwemrsolrl" path="res://Scripts/PartModules/WarpDrive1.cs" id="9_ilwn7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7trfy"]
+albedo_texture = ExtResource("3_j8kdr")
+metallic = 0.69
+roughness = 0.68
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("4_6i24p")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w72t0"]
+points = PackedVector3Array(-1, 1.1159, -0.000195742, -0.980814, 1.1159, 0.194988, -1, 1.34112, -0.000195742, -0.980814, 1.1159, -0.195184, -0.889389, -1.31882, -0.000195742, -0.924041, 1.21745, 0.382537, -0.980814, 1.34112, 0.194988, -0.821652, -1.31882, 0.340251, -0.980814, 1.34112, -0.195184, -0.924041, 1.21745, -0.382733, -0.821652, -1.31882, -0.340446, -0.831637, 1.21745, 0.555403, -0.924041, 1.34112, 0.382537, -0.629013, -1.31882, 0.628818, -0.924041, 1.34112, -0.382733, -0.831637, 1.21745, -0.555599, -0.629013, -1.31882, -0.629013, -0.707126, 1.21745, 0.70693, -0.831637, 1.34112, 0.555403, -0.340446, -1.31882, 0.821457, -0.555599, 1.21745, 0.831441, -0.831637, 1.34112, -0.555599, -0.707126, 1.21745, -0.707126, -0.340446, -1.31882, -0.821652, -0.555599, 1.21745, -0.831637, -0.707126, 1.34112, 0.70693, -0.000195742, -1.31882, 0.889193, -0.195184, 1.1159, 0.980619, -0.382733, 1.21745, 0.923845, -0.555599, 1.34112, 0.831441, -0.707126, 1.34112, -0.707126, -0.000195742, -1.31882, -0.889389, -0.382733, 1.21745, -0.924041, -0.195184, 1.1159, -0.980814, -0.555599, 1.34112, -0.831637, 0.340251, -1.31882, 0.821457, 0.194988, 1.1159, 0.980619, -0.000195742, 1.1159, 1, -0.195184, 1.34112, 0.980619, -0.382733, 1.34112, 0.923845, 0.340251, -1.31882, -0.821652, -0.000195742, 1.1159, -1, 0.194988, 1.1159, -0.980814, -0.382733, 1.34112, -0.924041, -0.195184, 1.34112, -0.980814, 0.628818, -1.31882, 0.628818, 0.555403, 1.21745, 0.831441, 0.382537, 1.21745, 0.923845, 0.194988, 1.34112, 0.980619, -0.000195742, 1.34112, 1, 0.628818, -1.31882, -0.629013, 0.382537, 1.21745, -0.924041, 0.555403, 1.21745, -0.831637, -0.000195742, 1.34112, -1, 0.194988, 1.34112, -0.980814, 0.821457, -1.31882, 0.340251, 0.831441, 1.21745, 0.555403, 0.70693, 1.21745, 0.70693, 0.555403, 1.34112, 0.831441, 0.382537, 1.34112, 0.923845, 0.821457, -1.31882, -0.340446, 0.70693, 1.21745, -0.707126, 0.831441, 1.21745, -0.555599, 0.382537, 1.34112, -0.924041, 0.555403, 1.34112, -0.831637, 0.889193, -1.31882, -0.000195742, 0.980619, 1.1159, 0.194988, 0.923845, 1.21745, 0.382537, 0.831441, 1.34112, 0.555403, 0.70693, 1.34112, 0.70693, 0.923845, 1.21745, -0.382733, 0.980619, 1.1159, -0.195184, 0.70693, 1.34112, -0.707126, 0.831441, 1.34112, -0.555599, 1, 1.1159, -0.000195742, 0.980619, 1.34112, 0.194988, 0.923845, 1.34112, 0.382537, 0.923845, 1.34112, -0.382733, 0.980619, 1.34112, -0.195184, 1, 1.34112, -0.000195742)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y7nil"]
+emission_shape_offset = Vector3(0, 1.66, 0)
+velocity_pivot = Vector3(0, 0.835, 0.065)
+direction = Vector3(0.205, -1.655, 0)
+spread = 0.0
+initial_velocity_min = 75.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.0
+color = Color(0, 0.67451, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qkutq"]
+load_path = "res://.godot/imported/smoke.png-da4f27f7c77d869bbe2e35c6e755fedf.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmdee"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_qkutq")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_uta5i"]
+material = SubResource("StandardMaterial3D_nmdee")
+
+[node name="GBRP_2_Engine" type="RigidBody3D"]
+mass = 500.0
+gravity_scale = 0.0
+script = ExtResource("1_y7nil")
+cameraRot = Vector3(-24.5, 90, 0)
+cameraPos = Vector3(2, 0.9, 0)
+cameraSize = 3.75
+categoryName = "Engines"
+categoryIcon = ExtResource("2_ilwn7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.93205, 0, 0, 0, 0.217973, 0, 0, 0, 4.02771, -1.19436e-07, 0.0122974, 4.95045e-07)
+layers = 3
+material_override = SubResource("StandardMaterial3D_7trfy")
+mesh = ExtResource("5_ss134")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.52425, 0, 0, 0, 0.217973, 0, 0, 0, 3.52425, 2.38645e-07, -0.0500594, -9.71882e-07)
+layers = 3
+material_override = SubResource("StandardMaterial3D_7trfy")
+mesh = ExtResource("5_ss134")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.026, 0, 0, 0, 0.274, 0, 0, 0, 4.026, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_w72t0")
+
+[node name="AttachmentNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26827, 0)
+script = ExtResource("6_ftaxd")
+
+[node name="Gravity" parent="." instance=ExtResource("7_45kgd")]
+
+[node name="Engine" parent="." instance=ExtResource("8_g8gfi")]
+script = ExtResource("9_ilwn7")
+thrust = 4e+07
+
+[node name="Plume" type="GPUParticles3D" parent="Engine"]
+transform = Transform3D(10.3013, 0.949461, 0, -0.949461, 10.3013, 0, 0, 0, 10.345, -0.187834, -2.76904, -0.107017)
+amount = 1000
+lifetime = 0.2
+visibility_aabb = AABB(-4, -18.795, -4, 8, 20, 8)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_y7nil")
+draw_pass_1 = SubResource("QuadMesh_uta5i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Engine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.72852, 0)
+light_color = Color(0.230846, 0.623884, 1, 1)
+light_energy = 0.0
+shadow_enabled = true
+omni_range = 100.0
+
+[connection signal="input_event" from="." to="." method="OnInputEvent"]

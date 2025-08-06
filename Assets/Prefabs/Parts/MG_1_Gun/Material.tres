@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bgj1ybcqfa0ec"]
+
+[ext_resource type="Texture2D" uid="uid://cf5m5csmtr4w4" path="res://Assets/Prefabs/Parts/MG_1_FuelTank/Color.png" id="1_jahvq"]
+[ext_resource type="Texture2D" uid="uid://jtdsgp4v5kec" path="res://Assets/Prefabs/Parts/MG_1_FuelTank/Normal.png" id="2_yu32j"]
+
+[resource]
+albedo_texture = ExtResource("1_jahvq")
+normal_enabled = true
+normal_texture = ExtResource("2_yu32j")
+texture_filter = 0

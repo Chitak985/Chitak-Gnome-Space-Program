@@ -17,28 +17,28 @@ public partial class CameraMouseMovement : Node3D
 	{
 		originalRotation = GlobalRotationDegrees;
 
-        up = upDir switch
-        {
-            "X" => Transform.Basis.X,
-            "-X" => -Transform.Basis.X,
-            "Y" => Transform.Basis.Y,
-            "-Y" => -Transform.Basis.Y,
-            "Z" => Transform.Basis.Z,
-            "-Z" => -Transform.Basis.Z,
-            _ => Transform.Basis.Z,
-        };
+		up = upDir switch
+		{
+			"X" => Transform.Basis.X,
+			"-X" => -Transform.Basis.X,
+			"Y" => Transform.Basis.Y,
+			"-Y" => -Transform.Basis.Y,
+			"Z" => Transform.Basis.Z,
+			"-Z" => -Transform.Basis.Z,
+			_ => Transform.Basis.Z,
+		};
 
 		right = rightDir switch
-        {
-            "X" => Transform.Basis.X,
-            "-X" => -Transform.Basis.X,
-            "Y" => Transform.Basis.Y,
-            "-Y" => -Transform.Basis.Y,
-            "Z" => Transform.Basis.Z,
-            "-Z" => -Transform.Basis.Z,
-            _ => Transform.Basis.Z,
-        };
-        //up = Transform.Basis.Z;
+		{
+			"X" => Transform.Basis.X,
+			"-X" => -Transform.Basis.X,
+			"Y" => Transform.Basis.Y,
+			"-Y" => -Transform.Basis.Y,
+			"Z" => Transform.Basis.Z,
+			"-Z" => -Transform.Basis.Z,
+			_ => Transform.Basis.Z,
+		};
+		//up = Transform.Basis.Z;
 		//right = Transform.Basis.X;
 	}
 

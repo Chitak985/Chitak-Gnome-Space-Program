@@ -40,9 +40,9 @@ public partial class OrbitCamera : Node3D
 		camera.Position = camera.Position.Lerp(outTarget, lerpy);
 	}
 
-    public override void _UnhandledInput(InputEvent @event)
-    {
-        if (@event is InputEventMouseButton buttonEvent)
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton buttonEvent)
 		{
 			switch (buttonEvent.ButtonIndex)
 			{
@@ -72,5 +72,5 @@ public partial class OrbitCamera : Node3D
 			rotTarget_Y += Vector3.Up * -motion.Relative.X*rotationAmnt;
 			rotTarget_X += Vector3.Right * -motion.Relative.Y*rotationAmnt;
 		}
-    }
+	}
 }
