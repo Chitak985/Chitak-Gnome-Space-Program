@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dyv83fiusn5pb"]
+[gd_scene load_steps=24 format=3 uid="uid://dyv83fiusn5pb"]
 
 [ext_resource type="PackedScene" uid="uid://trw28dpmj3t6" path="res://Assets/Meshes/VAB_Interior/VAB_Interior.blend" id="1_th7se"]
 [ext_resource type="ArrayMesh" uid="uid://bmvfs84rflyx6" path="res://Assets/Meshes/VAB_Stand.obj" id="2_pofsq"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b4vkjl6q7rcvf" path="res://Scripts/CraftAssembly/LaunchCraft.cs" id="13_vhgu6"]
 [ext_resource type="Script" uid="uid://c5cx8q1qmmjts" path="res://Scripts/CraftAssembly/CraftAssembler.cs" id="14_8srs3"]
 [ext_resource type="PackedScene" uid="uid://cp0g31ieghpyl" path="res://Assets/Prefabs/Parts/MG_1_Gun/mg_1_gun.tscn" id="14_e3mp1"]
+[ext_resource type="PackedScene" uid="uid://d3nmnyf74elv" path="res://Assets/Prefabs/Parts/MG_1_StructuralConnector/mg_1_StructuralConnector.tscn" id="15_egn2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_otfmg"]
 energy_multiplier = 2.0
@@ -138,7 +139,7 @@ categoryButton = ExtResource("10_g73v6")
 categoryContainer = NodePath("CatContainer/ScrollContainer/VBoxContainer")
 partListContainer = NodePath("PartContainer/PartList/PanelContainer")
 craftContainer = NodePath("../../CurrentCraft")
-partList = Array[PackedScene]([ExtResource("6_0j17l"), ExtResource("11_avdd4"), ExtResource("12_0e7k0"), ExtResource("13_mmpr6"), ExtResource("14_e3mp1")])
+partList = Array[PackedScene]([ExtResource("6_0j17l"), ExtResource("11_avdd4"), ExtResource("12_0e7k0"), ExtResource("13_mmpr6"), ExtResource("14_e3mp1"), ExtResource("15_egn2h")])
 
 [node name="PartContainer" type="Panel" parent="UI/PartPicker"]
 layout_mode = 1

@@ -10,6 +10,7 @@ public partial class WarpDrive1 : PartModule
 
 	public List<GpuParticles3D> particles = [];
 	public List<Light3D> lights = [];
+	private bool lastEngine = false;
 
 	public override void _Ready()
 	{
@@ -36,10 +37,15 @@ public partial class WarpDrive1 : PartModule
 			Vector3 force = direction*thrust*rb3D.flightInfo.throttle;
 
 			rb3D.LinearVelocity = force;
-			if(rb3D.flightInfo.throttle > 0){
+			if(rb3D.flightInfo.throttle != 0){
 				rb3D.LockRotation = true;
+				lastEngine = true;
 			}else{
 				rb3D.LockRotation = false;
+				if(lastEngine){
+					rb3D.LinearVelocity = new Vector3(0,0,0);
+					lastEngine = false;
+				}
 			}
 
 			foreach (GpuParticles3D particle in particles)

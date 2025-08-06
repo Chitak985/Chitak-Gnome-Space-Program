@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://5ox121mpm2ai"]
+[gd_scene load_steps=25 format=4 uid="uid://5ox121mpm2ai"]
 
 [ext_resource type="Theme" uid="uid://b4ia03110swah" path="res://Assets/Materials/GeneralUI/Theme.tres" id="2_brg3f"]
 [ext_resource type="Script" uid="uid://ksmq4us6ndfy" path="res://Scripts/TerrainGeneration/TerrainGen.cs" id="2_lhdhw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://dvfy3eukwnfqm" path="res://Scripts/CraftAssembly/CraftManager.cs" id="11_plivw"]
 [ext_resource type="PackedScene" uid="uid://hlhaljtudxey" path="res://Assets/Prefabs/world_environment.tscn" id="12_plivw"]
 [ext_resource type="PackedScene" uid="uid://bbfeq7evhiyvn" path="res://Assets/Prefabs/CraftContainer.tscn" id="14_h7oxk"]
+[ext_resource type="Script" uid="uid://bkh2mipgbppfw" path="res://ButtonDebug.cs" id="15_h7oxk"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_fce38"]
 material = ExtResource("4_tw5oi")
@@ -340,7 +341,6 @@ far = 2e+08
 
 [node name="PauseMenu" type="Control" parent="." node_paths=PackedStringArray("gameUI")]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -414,6 +414,17 @@ layout_mode = 2
 text = "Main Menu"
 script = ExtResource("4_fce38")
 scenePath = "res://Scenes/MainMenu.tscn"
+
+[node name="ButtonDebug" type="Button" parent="PauseMenu" node_paths=PackedStringArray("craftManagerNode")]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 412.0
+offset_right = 695.0
+offset_bottom = 496.0
+text = "DEBUG: Launch again without destroying vessel"
+autowrap_mode = 2
+script = ExtResource("15_h7oxk")
+craftManagerNode = NodePath("../../RenderLayers/LocalContainer/LocalView/LocalSpace/LoadedCrafts")
 
 [connection signal="pressed" from="PauseMenu/Panel/Control/VBoxContainer/Unpause" to="PauseMenu" method="UnpauseButton"]
 [connection signal="pressed" from="PauseMenu/Panel/Control/VBoxContainer/MainMenu" to="PauseMenu/Panel/Control/VBoxContainer/MainMenu" method="OnClick"]
